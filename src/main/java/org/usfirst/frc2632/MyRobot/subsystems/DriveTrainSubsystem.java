@@ -89,7 +89,7 @@ public class DriveTrainSubsystem extends Subsystem {
 
     }
     public void tank(XboxController controller){
-        tank(-(controller.getY(Hand.kLeft)*.5), (controller.getY(Hand.kRight)*.5));
+        tank(-(controller.getY(Hand.kLeft)*.75), (controller.getY(Hand.kRight)*.75));
 
     }
     public void arcade(XboxController controller){
