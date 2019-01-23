@@ -93,7 +93,7 @@ public class DriveTrainSubsystem extends Subsystem {
 
     }
     public void arcade(XboxController controller){
-        driveTrain.arcadeDrive((controller.getX(Hand.kLeft)*.75), -(controller.getY(Hand.kRight)*.75));
+        driveTrain.arcadeDrive((controller.getX(Hand.kLeft)*.75), (controller.getY(Hand.kLeft)*.75));
     }
     public void arcade(double rotation, double throttle){
         driveTrain.arcadeDrive(rotation, throttle);
