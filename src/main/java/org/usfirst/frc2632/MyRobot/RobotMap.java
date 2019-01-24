@@ -10,7 +10,8 @@ public class RobotMap{
     public static final int HATCH_LIMITSWITCH1 = 5;
 
     public static final int HATCH_SERVO1 = 0;
-
+    public static final int HATCH_SERVO2 = 1;
+    public static final int HATCH_SERVO3 = 2;
     public static final int GYRO = 0;
 
     public static final int ENCODER_CHANNEL_A = 0;
