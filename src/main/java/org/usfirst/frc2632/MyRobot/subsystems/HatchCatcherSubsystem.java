@@ -8,22 +8,22 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class HatchCatcherSubsystem extends Subsystem{
 
-    DigitalInput limitSwitch1 = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
-    DigitalInput limitSwitch2 = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
+    //DigitalInput limitSwitch1 = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
+    //DigitalInput limitSwitch2 = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
 
     Servo servo1 = new Servo(RobotMap.HATCH_SERVO1);
     Servo servo2 = new Servo(RobotMap.HATCH_SERVO2);
     Servo servo3 = new Servo(RobotMap.HATCH_SERVO3);
-    int openVal = 0;
-    int closeVal = 1;
+    double openVal = 1;
+    double closeVal = .2;
     public void initDefaultCommand() {
         
         // Set the default command for a subsystem here.
         //setDefaultCommand(new HatchCatcher());
     }
 
-    public DigitalInput getLimitSwitch(){
-        return limitSwitch1;
+    public void getLimitSwitch(){
+        //return limitSwitch1;
     }
 
     public void openServo(){

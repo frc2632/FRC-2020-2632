@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDOutput;
-
+/*
 public class PIDPixyCam{
 
     double forwardDistance = 5;
@@ -64,3 +64,4 @@ class DistancePIDOutput implements PIDOutput{
     }
 
 }
+*/
