@@ -2,8 +2,8 @@ package org.usfirst.frc2632.MyRobot.subsystems;
 
 import org.usfirst.frc2632.MyRobot.RobotMap;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class HatchCatcherSubsystem extends Subsystem{
@@ -16,6 +16,11 @@ public class HatchCatcherSubsystem extends Subsystem{
     Servo servo3 = new Servo(RobotMap.HATCH_SERVO3);
     double openVal = 1;
     double closeVal = .2;
+
+    Solenoid systemSolenoid = new Solenoid(RobotMap.SYSTEM_SOLENOID);
+    Solenoid hatchSolenoid = new Solenoid(RobotMap.HATCH_SOLENOID);
+
+
     public void initDefaultCommand() {
         
         // Set the default command for a subsystem here.
@@ -42,6 +47,22 @@ public class HatchCatcherSubsystem extends Subsystem{
         servo1.set(value);
         servo2.set(value);
         servo3.set(value);
+    }
+
+    public void pushSystem(){
+        systemSolenoid.set(true);
+    }
+
+    public void pullSystem(){
+        systemSolenoid.set(false);
+    }
+
+    public void pushHatch(){
+        hatchSolenoid.set(true);
+    }
+
+    public void pullHatch(){
+        hatchSolenoid.set(false);
     }
 }
 

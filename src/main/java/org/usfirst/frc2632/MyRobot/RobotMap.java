@@ -13,8 +13,15 @@ public class RobotMap{
     public static final int HATCH_SERVO2 = 1;
     public static final int HATCH_SERVO3 = 2;
     public static final int CAMERA_SERVO = 3;
+    public static final int BALL_LEFT_SERVO = 18;
+    public static final int BALL_RIGHT_SERVO = 19;
+
     public static final int GYRO = 11;
 
     public static final int ENCODER_CHANNEL_A = 12;
     public static final int ENCODER_CHANNEL_B = 13;
+
+    public static final int SYSTEM_SOLENOID = 15;
+    public static final int HATCH_SOLENOID = 16;
+    public static final int BALL_SOLENOID = 17;
 }
