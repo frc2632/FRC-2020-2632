@@ -2,6 +2,8 @@ package org.usfirst.frc2632.MyRobot;
 
 
 public class RobotMap{
+    
+    //The robot map class defines all of the ports on the robot so they can all be changed easily
 
     public static final int LFMOTORCONTROLLER = 3;
     public static final int LRMOTORCONTROLLER = 4;
