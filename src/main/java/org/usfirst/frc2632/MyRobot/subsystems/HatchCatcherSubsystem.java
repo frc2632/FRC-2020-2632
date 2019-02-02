@@ -2,6 +2,7 @@
 
 import org.usfirst.frc2632.MyRobot.RobotMap;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -16,7 +17,9 @@ public class HatchCatcherSubsystem extends Subsystem{
     Servo servo3 = new Servo(RobotMap.HATCH_SERVO3);
     double openVal = 1;
     double closeVal = .2;
+    boolean isFinished;
 
+    DigitalInput limitSwitch = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
     Solenoid systemSolenoid = new Solenoid(RobotMap.SYSTEM_SOLENOID);
     Solenoid hatchSolenoid = new Solenoid(RobotMap.HATCH_SOLENOID);
 
@@ -49,20 +52,36 @@ public class HatchCatcherSubsystem extends Subsystem{
         servo3.set(value);
     }
 
-    public void pushSystem(){
-        systemSolenoid.set(true);
+    public void moveSystem(boolean value){
+        systemSolenoid.set(value);
     }
 
-    public void pullSystem(){
-        systemSolenoid.set(false);
-    }
 
-    public void pushHatch(){
+    public void moveHatch(boolean value){
+        //True is push false is pull
         hatchSolenoid.set(true);
     }
 
-    public void pullHatch(){
-        hatchSolenoid.set(false);
+    public void grabGear(){
+        isFinished = false;
+        moveSystem(true);
+        while( limitSwitch.get() == true){
+            closeServo();
+            moveSystem(false);
+            isFinished = true;
+        }
+    }
+
+    public void releaseGear(){
+        moveSystem(true);
+        openServo();
+        moveHatch(true);
+    }
+    public void isFinishedSet(boolean value){
+        isFinished = value;
+    }
+    public boolean isFinishedGet(){
+        return isFinished;
     }
 }
 
