@@ -9,6 +9,12 @@ public class RobotMap{
     public static final int LRMOTORCONTROLLER = 4;
     public static final int RFMOTORCONTROLLER = 5;
     public static final int RRMOTORCONTROLLER = 6;
+
+    public static final int FRONT_LIFT_MOTOR = 9;
+    public static final int MID_LIFT_MOTOR = 10;
+    public static final int BACK_LIFT_MOTOR = 11;
+    public static final int LIFT_WHEEL_MOTOR = 12;
+
     public static final int HATCH_LIMITSWITCH1 = 7;
 
     public static final int HATCH_SERVO1 = 0;
@@ -26,4 +32,7 @@ public class RobotMap{
     public static final int SYSTEM_SOLENOID = 15;
     public static final int HATCH_SOLENOID = 16;
     public static final int BALL_SOLENOID = 17;
+
+    public static final int CHOO_CHOO = 18;
+    public static final int LIGHTS =    19;
 }

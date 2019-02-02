@@ -1,6 +1,6 @@
 
 package org.usfirst.frc2632.MyRobot.commands;
-import edu.wpi.first.wpilibj.XboxController;
+
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc2632.MyRobot.Robot;
 

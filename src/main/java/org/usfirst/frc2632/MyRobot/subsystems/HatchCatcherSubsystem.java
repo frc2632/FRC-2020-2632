@@ -9,15 +9,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class HatchCatcherSubsystem extends Subsystem{
 
-    //DigitalInput limitSwitch1 = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
-    //DigitalInput limitSwitch2 = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
+    double openVal = 1;
+    double closeVal = .2;
+    boolean isFinished;
 
     Servo servo1 = new Servo(RobotMap.HATCH_SERVO1);
     Servo servo2 = new Servo(RobotMap.HATCH_SERVO2);
     Servo servo3 = new Servo(RobotMap.HATCH_SERVO3);
-    double openVal = 1;
-    double closeVal = .2;
-    boolean isFinished;
+
 
     DigitalInput limitSwitch = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
     Solenoid systemSolenoid = new Solenoid(RobotMap.SYSTEM_SOLENOID);
@@ -53,6 +52,7 @@ public class HatchCatcherSubsystem extends Subsystem{
     }
 
     public void moveSystem(boolean value){
+        //true is push false is pull
         systemSolenoid.set(value);
     }
 
@@ -62,20 +62,23 @@ public class HatchCatcherSubsystem extends Subsystem{
         hatchSolenoid.set(true);
     }
 
-    public void grabGear(){
+    //This methood calls other methods in the system to perform a grab sequence 
+    public void grabHatch(){
         isFinished = false;
         moveSystem(true);
-        while( limitSwitch.get() == true){
+        if( limitSwitch.get() == true){
             closeServo();
             moveSystem(false);
             isFinished = true;
         }
     }
-
+    
+    // This methood calls other methods in the system to perform a release sequence
     public void releaseGear(){
         moveSystem(true);
         openServo();
-        moveHatch(true);
+        if (servo1.get() == openVal)
+            moveHatch(true);
     }
     public void isFinishedSet(boolean value){
         isFinished = value;
