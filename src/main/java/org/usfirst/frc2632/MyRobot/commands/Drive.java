@@ -12,6 +12,7 @@
 package org.usfirst.frc2632.MyRobot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc2632.MyRobot.Robot;
+import org.usfirst.frc2632.MyRobot.RobotMap;
 
 
  
@@ -21,7 +22,7 @@ public class Drive extends Command {
     public Drive() {
 
         requires(Robot.driveTrainSubsystem);
-    
+        requires(Robot.liftSystem);
 
     }
 
@@ -33,7 +34,12 @@ public class Drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.driveTrainSubsystem.arcade(Robot.oi.getController());
+        if(Robot.liftSystem.getHeight(RobotMap.SAFE_ELEVATOR_HEIGHT)){
+            Robot.driveTrainSubsystem.arcade(Robot.oi.getController());
+        }
+        else{
+            Robot.driveTrainSubsystem.slowArcade(Robot.oi.getController());
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()

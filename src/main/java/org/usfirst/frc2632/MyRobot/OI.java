@@ -70,7 +70,7 @@ public class OI {
 
 
         aButton.whenPressed(new HatchCatcherOpen());
-        bButton.whenPressed(new HatchCatcherClose());
+        bButton.whenPressed(new SpeedRacer());
         xButton.whileHeld(new LiftElevator(13));
 
         // SmartDashboard Buttons

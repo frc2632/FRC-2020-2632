@@ -76,6 +76,11 @@ public class LiftSystem extends Subsystem {
     rearLiftMotor.set(ControlMode.Position, setpoint);
   }
 
+  public boolean getHeight(double safeValue){
+     boolean safePos = frontLiftMotor.get() <= safeValue && midLiftMotor.get() <= safeValue && rearLiftMotor.get() <= safeValue;
+    return safePos;
+  }
+
 
 
 

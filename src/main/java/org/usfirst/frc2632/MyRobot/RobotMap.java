@@ -2,14 +2,21 @@ package org.usfirst.frc2632.MyRobot;
 
 
 public class RobotMap{
-    
-    public static final int TOP_ELEVATOR_VAL = 5;
-    public static final int MID_ELEVATOR_VAL = 5;
-    public static final int BOT_ELEVATOR_VAL = 5;
-    public static final int TOP_PLATFORM_VAL = 5;
-    public static final int MID_PLATFORM_VAL = 5;
-    //The robot map class defines all of the ports on the robot so they can all be changed easily
 
+    //     These are the constant values for the lfit 
+    
+    public static final double TOP_ELEVATOR_VAL = 5;
+    public static final double MID_ELEVATOR_VAL = 5;
+    public static final double BOT_ELEVATOR_VAL = 5;
+    public static final double TOP_PLATFORM_VAL = 5;
+    public static final double MID_PLATFORM_VAL = 5;
+    public static final double SAFE_ELEVATOR_HEIGHT = 5;
+    
+    
+    //     These are the port numbers
+
+
+    //    CAN
     public static final int LFMOTORCONTROLLER = 4;
     public static final int LRMOTORCONTROLLER = 5;
     public static final int RFMOTORCONTROLLER = 6;
@@ -23,6 +30,7 @@ public class RobotMap{
     public static final int FRONT_LIFT_ENCODER_A = 500;
     public static final int FRONT_LIFT_ENCODER_B = 500;
 
+    //NOT CAN
     public static final int HATCH_LIMITSWITCH1 = 7;
 
     public static final int HATCH_SERVO1 = 0;
