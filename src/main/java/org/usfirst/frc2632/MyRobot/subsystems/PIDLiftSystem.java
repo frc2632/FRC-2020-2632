@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import org.usfirst.frc2632.MyRobot.RobotMap;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
@@ -19,9 +20,6 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
  */
 public class PIDLiftSystem extends PIDSubsystem {
 
-  int topLevel = 5;
-  int midLevel = 4;
-  int reset = 0;
   SpeedController frontLiftMotor = new WPI_TalonSRX(RobotMap.FRONT_LIFT_MOTOR);
   SpeedController midLiftMotor = new WPI_TalonSRX(RobotMap.MID_LIFT_MOTOR);
   SpeedController rearLiftMotor = new WPI_TalonSRX(RobotMap.BACK_LIFT_MOTOR);
@@ -32,7 +30,7 @@ public class PIDLiftSystem extends PIDSubsystem {
     // Intert a subsystem name and PID values here
     super("SubsystemName", 1, 2, 3, 4);
     // Use these to get going:
-     setSetpoint(reset);
+     //setSetpoint(reset);
     // to
     enable();
   }
@@ -53,23 +51,23 @@ public class PIDLiftSystem extends PIDSubsystem {
 
   @Override
   protected void usePIDOutput(double output) {
-    rearLiftMotor.set(output);
-    midLiftMotor.set(-output);
+    rearLiftMotor.set(-output*.5);
+    midLiftMotor.set(output*.5);
     frontLiftMotor.set(output);
 
   }
 
-  public void topLevel(){
-    setSetpoint(topLevel);
-
-  }
-
-  public void midLevel(){
-    setSetpoint(midLevel);
-  }
-
   public void reset(){
-    setSetpoint(reset);
+  }
+
+  public void raiseFirstLevel(){
+    disable();
+    frontLiftMotor.set(0);
+  }
+
+  public void raiseSecondLevel(){
+    midLiftMotor.set(0);
+
   }
 
 }

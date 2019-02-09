@@ -3,17 +3,25 @@ package org.usfirst.frc2632.MyRobot;
 
 public class RobotMap{
     
+    public static final int TOP_ELEVATOR_VAL = 5;
+    public static final int MID_ELEVATOR_VAL = 5;
+    public static final int BOT_ELEVATOR_VAL = 5;
+    public static final int TOP_PLATFORM_VAL = 5;
+    public static final int MID_PLATFORM_VAL = 5;
     //The robot map class defines all of the ports on the robot so they can all be changed easily
 
-    public static final int LFMOTORCONTROLLER = 3;
-    public static final int LRMOTORCONTROLLER = 4;
-    public static final int RFMOTORCONTROLLER = 5;
-    public static final int RRMOTORCONTROLLER = 6;
+    public static final int LFMOTORCONTROLLER = 4;
+    public static final int LRMOTORCONTROLLER = 5;
+    public static final int RFMOTORCONTROLLER = 6;
+    public static final int RRMOTORCONTROLLER = 7;
 
     public static final int FRONT_LIFT_MOTOR = 9;
     public static final int MID_LIFT_MOTOR = 10;
     public static final int BACK_LIFT_MOTOR = 11;
     public static final int LIFT_WHEEL_MOTOR = 12;
+
+    public static final int FRONT_LIFT_ENCODER_A = 500;
+    public static final int FRONT_LIFT_ENCODER_B = 500;
 
     public static final int HATCH_LIMITSWITCH1 = 7;
 
@@ -32,6 +40,7 @@ public class RobotMap{
     public static final int SYSTEM_SOLENOID = 15;
     public static final int HATCH_SOLENOID = 16;
     public static final int BALL_SOLENOID = 17;
+    
 
     public static final int CHOO_CHOO = 18;
     public static final int LIGHTS =    19;

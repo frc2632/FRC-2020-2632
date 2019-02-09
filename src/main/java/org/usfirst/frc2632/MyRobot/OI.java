@@ -71,7 +71,7 @@ public class OI {
 
         aButton.whenPressed(new HatchCatcherOpen());
         bButton.whenPressed(new HatchCatcherClose());
-        xButton.whileHeld(new SpeedRacer());
+        xButton.whileHeld(new LiftElevator(13));
 
         // SmartDashboard Buttons
 
