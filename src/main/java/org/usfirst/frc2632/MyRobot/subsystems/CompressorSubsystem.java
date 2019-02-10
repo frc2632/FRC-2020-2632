@@ -7,6 +7,7 @@
 
 package org.usfirst.frc2632.MyRobot.subsystems;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -16,9 +17,20 @@ public class CompressorSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  Compressor compressor = new Compressor();
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
+
+  public void stopCompressor(){
+    compressor.stop();
+  }
+
+  public void startCompressor(){
+    compressor.start();
+  }
+
 }
