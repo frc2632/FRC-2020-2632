@@ -32,5 +32,8 @@ public class CompressorSubsystem extends Subsystem {
   public void startCompressor(){
     compressor.start();
   }
+  public boolean isOn(){
+    return compressor.enabled();
+  }
 
 }
