@@ -33,7 +33,7 @@ public class CompressorSubsystem extends Subsystem {
     compressor.start();
   }
   public boolean isOn(){
-    return compressor.enabled();
+    return compressor.getClosedLoopControl();
   }
 
 }

@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+/*
 public class HatchCatcherSubsystem extends Subsystem{
 
     double openVal = 1;
@@ -87,4 +87,4 @@ public class HatchCatcherSubsystem extends Subsystem{
         return isFinished;
     }
 }
-
+*/

@@ -12,6 +12,20 @@ public class RobotMap{
     public static final double MID_PLATFORM_VAL = 5;
     public static final double SAFE_ELEVATOR_HEIGHT = 5;
     
+
+    //PID Values for the lift
+    public static double kfFrontLift = 5;    
+    public static double kdFrontLift = 5;
+    public static double kpFrontLift = 5;
+    public static double kiFrontLift = 0;
+    public static double kfMidLift = 5;
+    public static double kdMidLift = 5;
+    public static double kpMidLift = 5;
+    public static double kiMidLift = 0;
+    public static double kfRearLift = 5;
+    public static double kdRearLift = 5;
+    public static double kpRearLift = 5;
+    public static double kiRearLift = 0;
     
     //     These are the port numbers
 

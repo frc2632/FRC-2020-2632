@@ -41,17 +41,17 @@ public class LiftSystem extends Subsystem {
     midLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.Analog);
     rearLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.Analog);
 
-    frontLiftMotor.config_kF(1, .4);
-    frontLiftMotor.config_kD(1, 1);
-    frontLiftMotor.config_kP(1, 10);
+    frontLiftMotor.config_kF(1, RobotMap.kfFrontLift);
+    frontLiftMotor.config_kD(1, RobotMap.kdFrontLift);
+    frontLiftMotor.config_kP(1, RobotMap.kpFrontLift);
 
-    midLiftMotor.config_kF(1, .2);
-    midLiftMotor.config_kD(1, 1);
-    midLiftMotor.config_kP(1, 5);
+    midLiftMotor.config_kF(1, RobotMap.kfMidLift);
+    midLiftMotor.config_kD(1, RobotMap.kdMidLift);
+    midLiftMotor.config_kP(1, RobotMap.kpMidLift);
 
-    rearLiftMotor.config_kF(1, -.2);
-    rearLiftMotor.config_kD(1, 1);
-    rearLiftMotor.config_kP(1, -5);
+    rearLiftMotor.config_kF(1, RobotMap.kfRearLift);
+    rearLiftMotor.config_kD(1, RobotMap.kdRearLift);
+    rearLiftMotor.config_kP(1, RobotMap.kpRearLift);
     
 
 

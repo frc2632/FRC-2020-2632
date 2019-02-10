@@ -69,7 +69,7 @@ public class OI {
         Button xButton = new JoystickButton(controller, 3);
 
 
-        aButton.whenPressed(new HatchCatcherOpen());
+        //aButton.whenPressed(new HatchCatcherOpen());
         bButton.whenPressed(new SpeedRacer());
         xButton.whileHeld(new LiftElevator(13));
 

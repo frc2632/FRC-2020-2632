@@ -22,6 +22,7 @@ public class DisableCompressor extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
     if(Robot.compressorSubsystem.isOn()){
       Robot.compressorSubsystem.stopCompressor();
     }
@@ -45,6 +46,7 @@ public class DisableCompressor extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    finished = false;
   }
 
   // Called when another command which requires one or more of the same

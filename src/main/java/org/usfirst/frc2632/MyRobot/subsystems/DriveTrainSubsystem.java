@@ -38,7 +38,7 @@ public class DriveTrainSubsystem extends Subsystem {
     private WPI_TalonSRX LFSpeedController;
     private WPI_TalonSRX RRSpeedController;
     private WPI_TalonSRX RFSpeedController;
-    private DifferentialDrive driveTrain;
+    public DifferentialDrive driveTrain;
 
     public DriveTrainSubsystem() {
 
