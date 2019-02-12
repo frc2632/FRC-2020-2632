@@ -9,15 +9,12 @@ package org.usfirst.frc2632.MyRobot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import com.ctre.phoenix.motorcontrol.RemoteFeedbackDevice;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.TalonSRXConfiguration;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import org.usfirst.frc2632.MyRobot.Robot;
 import org.usfirst.frc2632.MyRobot.RobotMap;
 
-import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -29,13 +26,14 @@ public class LiftSystem extends Subsystem {
   WPI_TalonSRX frontLiftMotor;
   WPI_TalonSRX midLiftMotor;
   WPI_TalonSRX rearLiftMotor;
+  WPI_TalonSRX wheelMotor;
   
   public LiftSystem(){
 
     frontLiftMotor = new WPI_TalonSRX(RobotMap.FRONT_LIFT_MOTOR);
     midLiftMotor = new WPI_TalonSRX(RobotMap.MID_LIFT_MOTOR);
     rearLiftMotor = new WPI_TalonSRX(RobotMap.BACK_LIFT_MOTOR);
-
+    wheelMotor = new WPI_TalonSRX(RobotMap.LIFT_WHEEL_MOTOR);
 
     frontLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.Analog);
     midLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.Analog);
@@ -52,10 +50,7 @@ public class LiftSystem extends Subsystem {
     rearLiftMotor.config_kF(1, RobotMap.kfRearLift);
     rearLiftMotor.config_kD(1, RobotMap.kdRearLift);
     rearLiftMotor.config_kP(1, RobotMap.kpRearLift);
-    
 
-
-    WPI_TalonSRX wheelMotor = new WPI_TalonSRX(RobotMap.LIFT_WHEEL_MOTOR);
   }
 
   @Override
@@ -79,6 +74,10 @@ public class LiftSystem extends Subsystem {
   public boolean getHeight(double safeValue){
      boolean safePos = frontLiftMotor.get() <= safeValue && midLiftMotor.get() <= safeValue && rearLiftMotor.get() <= safeValue;
     return safePos;
+  }
+
+  public void driveLiftSystem(XboxController controller){
+    wheelMotor.set(controller.getX(Hand.kRight));
   }
 
 

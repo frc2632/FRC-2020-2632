@@ -33,7 +33,7 @@ public class Robot extends TimedRobot {
     SendableChooser<Command> chooser = new SendableChooser<>();
 
     public static OI oi;
-    //public static HatchCatcherSubsystem hatchCatcherSubsystem;
+    public static HatchCatcherSubsystem hatchCatcherSubsystem;
     public static CameraSubsystem cameraSubsystem;
     public static DriveTrainSubsystem driveTrainSubsystem;
     public static LiftSystem liftSystem;
@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
-        //hatchCatcherSubsystem = new HatchCatcherSubsystem();
+        hatchCatcherSubsystem = new HatchCatcherSubsystem();
         cameraSubsystem = new CameraSubsystem();
         driveTrainSubsystem = new DriveTrainSubsystem();
         liftSystem = new LiftSystem();

@@ -10,7 +10,6 @@ package org.usfirst.frc2632.MyRobot.commands;
 import org.usfirst.frc2632.MyRobot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DisableCompressor extends Command {
 

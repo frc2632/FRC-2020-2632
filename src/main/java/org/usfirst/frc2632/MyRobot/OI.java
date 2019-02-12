@@ -17,7 +17,6 @@ import org.usfirst.frc2632.MyRobot.commands.*;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.command.Command;
 
 
 
@@ -69,7 +68,7 @@ public class OI {
         Button xButton = new JoystickButton(controller, 3);
 
 
-        //aButton.whenPressed(new HatchCatcherOpen());
+        aButton.whenPressed(new HatchCatcherOpen());
         bButton.whenPressed(new SpeedRacer());
         xButton.whenPressed(new DisableCompressor());
 
