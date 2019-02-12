@@ -9,6 +9,7 @@ package org.usfirst.frc2632.MyRobot.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Add your docs here.
@@ -33,6 +34,7 @@ public class CompressorSubsystem extends Subsystem {
     compressor.start();
   }
   public boolean isOn(){
+    SmartDashboard.putBoolean("Compressor On:", !compressor.getClosedLoopControl());
     return compressor.getClosedLoopControl();
   }
 

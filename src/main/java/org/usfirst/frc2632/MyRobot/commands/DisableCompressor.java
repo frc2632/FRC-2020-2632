@@ -10,6 +10,7 @@ package org.usfirst.frc2632.MyRobot.commands;
 import org.usfirst.frc2632.MyRobot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DisableCompressor extends Command {
 
@@ -23,12 +24,13 @@ public class DisableCompressor extends Command {
   @Override
   protected void initialize() {
 
-    if(Robot.compressorSubsystem.isOn()){
-      Robot.compressorSubsystem.stopCompressor();
-    }
-    else{
+    if(!(Robot.compressorSubsystem.isOn())){
       Robot.compressorSubsystem.startCompressor();
     }
+    else{
+      Robot.compressorSubsystem.stopCompressor();
+    }
+    //SmartDashboard.putBoolean("Compressor On: ", Robot.compressorSubsystem.isOn());
     finished = true;
   }
 
@@ -46,7 +48,7 @@ public class DisableCompressor extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    finished = false;
+
   }
 
   // Called when another command which requires one or more of the same
