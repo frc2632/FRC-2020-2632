@@ -28,6 +28,7 @@ public class LiftSystem extends Subsystem {
   WPI_TalonSRX rearLiftMotor;
   WPI_TalonSRX wheelMotor;
   
+  
   public LiftSystem(){
 
     frontLiftMotor = new WPI_TalonSRX(RobotMap.FRONT_LIFT_MOTOR);
@@ -70,15 +71,38 @@ public class LiftSystem extends Subsystem {
   public void setRear(double setpoint) {
     rearLiftMotor.set(ControlMode.Position, setpoint);
   }
+  
+  public double getFront() {
+    return frontLiftMotor.get();
+  }
+
+  public double getMid(){
+    return midLiftMotor.get();
+  }
+
+  public double getRear(){
+    return rearLiftMotor.get();
+  }
 
   public boolean getHeight(double safeValue){
      boolean safePos = frontLiftMotor.get() <= safeValue && midLiftMotor.get() <= safeValue && rearLiftMotor.get() <= safeValue;
     return safePos;
   }
+  
+  public void liftElevator(double value){
+    midLiftMotor.set(ControlMode.Position, value);
+    rearLiftMotor.set(ControlMode.Position, -value);
+  }
+
+  public double getElevatorHeight(){
+    return midLiftMotor.get();
+  }
 
   public void driveLiftSystem(XboxController controller){
     wheelMotor.set(controller.getX(Hand.kRight));
   }
+
+ 
 
 
 

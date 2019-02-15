@@ -14,16 +14,16 @@ public class RobotMap{
     
 
     //PID Values for the lift
-    public static double kfFrontLift = 5;    
-    public static double kdFrontLift = 5;
+    public static double kfFrontLift = 0.109;    
+    public static double kdFrontLift = 0;
     public static double kpFrontLift = 5;
     public static double kiFrontLift = 0;
-    public static double kfMidLift = 5;
-    public static double kdMidLift = 5;
+    public static double kfMidLift = 0.109;
+    public static double kdMidLift = 0;
     public static double kpMidLift = 5;
     public static double kiMidLift = 0;
-    public static double kfRearLift = 5;
-    public static double kdRearLift = 5;
+    public static double kfRearLift = 0.109;
+    public static double kdRearLift = 0;
     public static double kpRearLift = 5;
     public static double kiRearLift = 0;
     
