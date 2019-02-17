@@ -1,18 +1,16 @@
-
 package org.usfirst.frc2632.MyRobot.commands;
-import edu.wpi.first.wpilibj.XboxController;
+
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc2632.MyRobot.Robot;
 
 /**
  *
- */
-public class HatchCatcher extends Command {
 
-    
-    public HatchCatcher() {
+public class HatchCatcherClose extends Command {
 
-        requires(Robot.HatchCatcherSubsystem);
+    public HatchCatcherClose() {
+
+        requires(Robot.hatchCatcherSubsystem);
     
 
     }
@@ -20,26 +18,25 @@ public class HatchCatcher extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        Robot.hatchCatcherSubsystem.closeServo();
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        XboxController controller = Robot.oi.getController();
-        if (controller.getAButton())
-            Robot.HatchCatcherSubsystem.openServo();
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return false;
+        return Robot.hatchCatcherSubsystem.isFinishedGet();
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        //Robot.HatchCatcherSubsystem.arcade(0, 0);
+        Robot.hatchCatcherSubsystem.isFinishedSet(false);
     }
 
     // Called when another command which requires one or more of the same
@@ -49,3 +46,4 @@ public class HatchCatcher extends Command {
         //Robot.driveTrainSubsystem.arcade(0, 0);
     }
 }
+*/

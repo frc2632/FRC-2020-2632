@@ -29,9 +29,8 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 
 
-/**
- *
- */
+
+ 
 public class DriveTrainSubsystem extends Subsystem {
 
     
@@ -39,7 +38,7 @@ public class DriveTrainSubsystem extends Subsystem {
     private WPI_TalonSRX LFSpeedController;
     private WPI_TalonSRX RRSpeedController;
     private WPI_TalonSRX RFSpeedController;
-    private DifferentialDrive driveTrain;
+    public DifferentialDrive driveTrain;
 
     public DriveTrainSubsystem() {
 
@@ -95,6 +94,12 @@ public class DriveTrainSubsystem extends Subsystem {
     public void arcade(double rotation, double throttle){
         driveTrain.arcadeDrive(rotation, throttle);
     }
-
+    public void slowArcade(XboxController controller){
+        driveTrain.arcadeDrive((controller.getX(Hand.kLeft) * .25), (controller.getY(Hand.kLeft) * .25));
+    }
+    
+    public void slowTank(XboxController controller) {
+        tank(-(controller.getY(Hand.kLeft)*.25), (controller.getY(Hand.kRight)*.25));
+    }
 }
 
