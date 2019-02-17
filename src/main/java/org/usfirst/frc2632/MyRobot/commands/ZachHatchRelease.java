@@ -30,8 +30,8 @@ public class ZachHatchRelease extends Command {
   protected void execute() {
     Robot.hatchCatcherSubsystem.moveSystem(true);
     double originalHeight = Robot.liftSystem.getElevatorHeight();
-    Robot.liftSystem.liftElevator(originalHeight - 2);
-    if (Robot.liftSystem.getElevatorHeight() == originalHeight - 2) {
+    Robot.liftSystem.liftElevator(originalHeight + 2);
+    if (Robot.liftSystem.getElevatorHeight() == originalHeight + 2) {
       Robot.hatchCatcherSubsystem.moveSystem(false);
       finished = true;
     }

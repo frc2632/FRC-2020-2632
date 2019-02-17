@@ -18,17 +18,15 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class LiftElevator extends Command {
   boolean finished = false;
-  double value;
+  double inches;
   public LiftElevator(double passthruValue) {
 
     requires(Robot.liftSystem);
-    value = passthruValue;
+    inches = passthruValue;
   }
 
   protected void initialize() {
-    Robot.liftSystem.setRear(value);
-    Robot.liftSystem.setMid(value);
-    Robot.liftSystem.setFront(value);
+    Robot.liftSystem.liftElevatorInches(inches);
     finished = true;
   }
 

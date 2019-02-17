@@ -33,7 +33,7 @@ public class Robot extends TimedRobot {
     SendableChooser<Command> chooser = new SendableChooser<>();
 
     public static OI oi;
-    public static HatchCatcherSubsystem hatchCatcherSubsystem;
+    public static ZachHatchCatcher hatchCatcherSubsystem;
     public static CameraSubsystem cameraSubsystem;
     public static DriveTrainSubsystem driveTrainSubsystem;
     public static LiftSystem liftSystem;
@@ -44,7 +44,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
-        hatchCatcherSubsystem = new HatchCatcherSubsystem();
+        hatchCatcherSubsystem = new ZachHatchCatcher();
         cameraSubsystem = new CameraSubsystem();
         driveTrainSubsystem = new DriveTrainSubsystem();
         liftSystem = new LiftSystem();
@@ -73,6 +73,8 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("LF Motor Port", RobotMap.LFMOTORCONTROLLER);
         SmartDashboard.putData(Scheduler.getInstance());
         SmartDashboard.putData("Disable Compressor", new DisableCompressor());
+        SmartDashboard.putNumber("Elevator Height", 60);
+        SmartDashboard.putData("Lift Elevator", new LiftElevator(SmartDashboard.getNumber("Elevator Height", 1)));
         
     }
 
@@ -92,9 +94,9 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-        autonomousCommand = chooser.getSelected();
+        // autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+        //if (autonomousCommand != null) autonomousCommand.start();
     }
 
     /**

@@ -1,6 +1,6 @@
 /*----------------------------------------------------------------------------*/
 /* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* Open Source Software - may be modifi+ed and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
@@ -30,11 +30,11 @@ public class ZachHatchGrab extends Command {
   @Override
   protected void execute() {
     Robot.hatchCatcherSubsystem.moveSystem(true);
-    double originalHeight = Robot.liftSystem.getElevatorHeight();
-    Robot.liftSystem.liftElevator(originalHeight + 2);
-    if(Robot.liftSystem.getElevatorHeight() == originalHeight + 2){
+    if (!Robot.hatchCatcherSubsystem.getLimitSwitch()) {
+      Robot.liftSystem.liftElevator(Robot.liftSystem.getElevatorHeight() + 10);
+    }
+    if (Robot.hatchCatcherSubsystem.getLimitSwitch()) {
       Robot.hatchCatcherSubsystem.moveSystem(false);
-      finished = true;
     }
   }
 

@@ -36,9 +36,10 @@ public class LiftSystem extends Subsystem {
     rearLiftMotor = new WPI_TalonSRX(RobotMap.BACK_LIFT_MOTOR);
     wheelMotor = new WPI_TalonSRX(RobotMap.LIFT_WHEEL_MOTOR);
 
-    frontLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.Analog);
-    midLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.Analog);
-    rearLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.Analog);
+    frontLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
+    midLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
+    rearLiftMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
+    
 
     frontLiftMotor.config_kF(1, RobotMap.kfFrontLift);
     frontLiftMotor.config_kD(1, RobotMap.kdFrontLift);
@@ -51,6 +52,7 @@ public class LiftSystem extends Subsystem {
     rearLiftMotor.config_kF(1, RobotMap.kfRearLift);
     rearLiftMotor.config_kD(1, RobotMap.kdRearLift);
     rearLiftMotor.config_kP(1, RobotMap.kpRearLift);
+
 
   }
 
@@ -90,8 +92,13 @@ public class LiftSystem extends Subsystem {
   }
   
   public void liftElevator(double value){
-    midLiftMotor.set(ControlMode.Position, value);
-    rearLiftMotor.set(ControlMode.Position, -value);
+    midLiftMotor.set(ControlMode.Position, value/2);
+    rearLiftMotor.set(ControlMode.Position, -value/2);
+  }
+  public void liftElevatorInches(double inches){
+    double pulses = inches * 21.41;
+    midLiftMotor.set(ControlMode.Position, pulses / 2);
+    rearLiftMotor.set(ControlMode.Position, -pulses / 2);
   }
 
   public double getElevatorHeight(){

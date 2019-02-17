@@ -6,7 +6,7 @@ import org.usfirst.frc2632.MyRobot.Robot;
 
 /**
  *
-*/
+
 public class HatchCatcherOpen extends Command {
 
     public HatchCatcherOpen() {
@@ -47,3 +47,4 @@ public class HatchCatcherOpen extends Command {
         //Robot.driveTrainSubsystem.arcade(0, 0);
     }
 }
+*/

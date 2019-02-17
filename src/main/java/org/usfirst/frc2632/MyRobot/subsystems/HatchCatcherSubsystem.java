@@ -1,3 +1,4 @@
+ /*
  package org.usfirst.frc2632.MyRobot.subsystems;
 
 import org.usfirst.frc2632.MyRobot.RobotMap;
@@ -18,7 +19,7 @@ public class HatchCatcherSubsystem extends Subsystem{
     Servo servo3 = new Servo(RobotMap.HATCH_SERVO3);
 
 
-    DigitalInput limitSwitch = new DigitalInput(RobotMap.HATCH_LIMITSWITCH1);
+    DigitalInput limitSwitch = new DigitalInput(RobotMap.HATCH_LIMITSWITCH);
     Solenoid systemSolenoid = new Solenoid(RobotMap.SYSTEM_SOLENOID);
     Solenoid hatchSolenoid = new Solenoid(RobotMap.HATCH_SOLENOID);
 
@@ -87,3 +88,4 @@ public class HatchCatcherSubsystem extends Subsystem{
         return isFinished;
     }
 }
+*/
